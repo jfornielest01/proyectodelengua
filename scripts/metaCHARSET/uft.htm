@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #fdf5e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        /* Animación de la imagen dando vueltas */
+        .rotating-img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #c5a059;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.5);
+            animation: spin 2s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .text {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000000;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Barra de progreso visual opcional para mejorar la estética */
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background: #333;
+            margin-top: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #8b0000;
+            width: 0%;
+            animation: fillProgress 3s linear forwards;
+        }
+
+        @keyframes fillProgress {
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container">
+        <img src="/cargas/php.png" alt="Cargando" class="rotating-img">
+        
+        <div class="text">Redirección...</div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <script>
+        // Redirigir después de 3000 milisegundos (3 segundos)
+        setTimeout(function() {
+            window.location.href = "/acceso/pasarelaFOTOS/juanFornieles/fotos.html";
+        }, 3000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificación</title>
+    <style>
+        :root {
+            --oro: #c5a059;
+            --pergamino: #fdf5e6;
+            --guinda: #8b0000;
+            --texto: #2c2c2c;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--texto);
+        }
+
+        .container {
+            background-color: var(--pergamino);
+            width: 90%;
+            max-width: 1050px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h1 {
+            text-align: center;
+            color: var(--guinda);
+            border-bottom: 2px solid var(--oro);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .analysis-text {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .section-box {
+            background: rgba(255,255,255,0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--oro);
+        }
+
+        /* Tooltips */
+        .raro {
+            color: var(--guinda);
+            font-weight: bold;
+            cursor: help;
+            border-bottom: 1px dotted var(--guinda);
+            position: relative;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+
+        .raro:hover .tooltip { visibility: visible; opacity: 1; }
+
+        /* Pasarela de Fotos */
+        .photo-gallery {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo-gallery:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(139, 0, 0, 0.8);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Nav */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+        }
+
+        .nav img { width: 50px; transition: 0.3s; cursor: pointer; }
+        .nav img:hover { transform: scale(1.2); }
+        .prev img { transform: scaleX(-1); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Conclusión</h1>
+<p>El Cid logra vengar el honor de su familia, sus hijas se casan con hombres nobles y respetables, y finalmente regresa triunfante a Castilla, donde es reconocido y admirado por todos. Después de tanto sufrimiento y pruebas, Rodrigo Díaz de Vivar demuestra que la lealtad, el valor y la honra no se pierden, y que un hombre fiel a sus principios siempre encuentra justicia… aunque la vida le haga sufrir antes de alcanzarla. Al final, el Cid no solo es un héroe, sino un padre orgulloso y un hombre que deja huella.</p>
+    <div class="main-content">
+        <div class="analysis-text">
+
+
+            <p style="font-size: 0.85rem; color: #666; font-style: italic; margin-top: 10px; text-align: center;">
+            </p>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="/acceso/proyectos/KlKpq132/5/p.htm" class="prev">
+            <img src="/proyectos/flecha-derecha.png" alt="Anterior">
+        </a>
+        <a href="/acceso/proyectos/KlKpq132/7/p.htm" class="next">
+            <img src="/proyectos/flecha-derecha.png" alt="Siguiente">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

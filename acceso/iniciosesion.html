@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identificación</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        width: 350px;
+        padding: 35px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-align: left;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: normal;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #999;
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    input:focus {
+        outline: none;
+        border: 1px solid black;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    button:hover {
+        opacity: 0.85;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>ACCESO</h2>
+    <form onsubmit="return validarLogin()">
+        <label for="identificacion">IDENTIFICACION</label>
+        <input type="text" id="identificacion">
+
+        <label for="clave">CLAVE</label>
+        <input type="password" id="clave">
+
+        <button type="submit">ENTRAR</button>
+    </form>
+</div>
+
+<script>
+function validarLogin() {
+    var id = document.getElementById("identificacion").value.trim();
+    var clave = document.getElementById("clave").value.trim();
+
+    if(id !== "" && clave !== "") {
+        window.location.href = "/acceso/personas/educarex.es/entrada.htm";
+        return false;
+    } else {
+        alert("Ponlo bien.");
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>
