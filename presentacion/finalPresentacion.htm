@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fin del Teatro</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        /* Pantalla de bienvenida para saltar el bloqueo del navegador */
+        #pantalla-inicio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #7a1f1d; /* Color telón */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            cursor: pointer;
+            transition: opacity 0.5s ease-out;
+        }
+        #pantalla-inicio h2 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .btn-entrar {
+            background-color: #d4af37;
+            color: #111111;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        /* Contenido Principal (Oculto al inicio) */
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            border: 2px solid #d4af37;
+            padding: 40px;
+            background-color: #111111;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transition: opacity 0.8s ease-in;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #d4af37;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .logo-teatro {
+            font-size: 80px;
+            margin: 20px 0;
+        }
+        .organizadores {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 30px 0;
+            color: #cccccc;
+        }
+        .organizadores strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 10px;
+        }
+        h2.gracias {
+            font-size: 2.5rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pantalla interactiva obligatoria -->
+    <div id="pantalla-inicio" onclick="comenzarTeatro()">
+        <h2>El Telón se Abre</h2>
+        <button class="btn-entrar">ENTRAR</button>
+    </div>
+
+    <!-- Contenido del Teatro -->
+    <div class="container" id="contenido-teatro">
+        <h1>Fin del Teatro</h1>
+        
+        <div class="logo-teatro">🎭</div>
+
+        <p class="organizadores">
+            <strong>Organizado por:</strong>
+            Juan Fornieles, Camila Martínez, Antonio Méndez, Fabiola Tiburcio, Carmen Tardío.
+        </p>
+
+        <h2 class="gracias">GRACIAS</h2>
+    </div>
+
+    <!-- Elemento de audio -->
+    <audio id="audioTeatro" src="https://www.myinstants.com/media/sounds/preview_4.mp3" preload="auto"></audio>
+
+    <script>
+        function comenzarTeatro() {
+            // 1. Reproduce el sonido de inmediato gracias al clic del usuario
+            var audio = document.getElementById("audioTeatro");
+            audio.play();
+
+            // 2. Oculta la pantalla de inicio con desvanecimiento
+            var inicio = document.getElementById("pantalla-inicio");
+            inicio.style.opacity = "0";
+            
+            setTimeout(function() {
+                inicio.style.display = "none";
+            }, 500);
+
+            // 3. Muestra el contenido principal de forma fluida
+            var contenido = document.getElementById("contenido-teatro");
+            contenido.style.opacity = "1";
+        }
+    </script>
+
+</body>
+</html>
