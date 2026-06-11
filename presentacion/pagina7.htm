@@ -1,0 +1,88 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pantalla completa</title>
+
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background-image: url("https://www.infoarguedas.com/wp-content/uploads/2021/11/Banos-Colegio-Arguedas-2021-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+  }
+</style>
+</head>
+
+<body>
+
+<button onclick="goFullscreen()">Pantalla completa</button>
+
+<script>
+function goFullscreen() {
+  const elem = document.documentElement;
+
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<script>
+const sounds = {
+  x: 'https://www.myinstants.com/media/sounds/timbre-escuela.mp3',
+  c: 'https://www.myinstants.com/media/sounds/sonido-de-spray-efecto-de-sonido.mp3',
+  r: 'https://www.myinstants.com/media/sounds/5-cerrar-puerta.mp3',
+  e: 'https://www.myinstants.com/media/sounds/puerta-abriendoce.mp3',
+};
+
+const audios = {};
+Object.entries(sounds).forEach(([key, url]) => {
+  audios[key] = new Audio(url);
+});
+
+document.addEventListener('keydown', (e) => {
+  const key = e.key.toLowerCase();
+  if (audios[key]) {
+    audios[key].currentTime = 0;
+    audios[key].play();
+  } else if (e.key === 'ArrowRight') {
+    window.location.href = '/presentacion/pagina8.htm';
+  }
+});
+</script>
